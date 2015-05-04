@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-        <title>とあるおバカの世界観測記録</title>
+        <title>Tornado 异步框架初探（一）</title>
         <meta charset="utf-8" />
           
 <style type="text/css">
@@ -1757,34 +1757,120 @@ jQuery(document).ready(function($) {
               </ul>
             </div>
 
+<section id="content" class="body"  class="margin-top: 20px">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/drafts/tornado-yi-bu-kuang-jia-chu-tan-yi.html" rel="bookmark"
+                   title="Permalink to Tornado 异步框架初探（一）">Tornado 异步框架初探（一）</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2015-05-04T16:27:00+08:00">
+                Mon, 04 May 2015
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/obaka.html"> Obaka</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>我们以爬虫为例子，先来感受一下. 这里采用的是淘宝的mobile
+api，这个URL没有访问限制，方便测试</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">tornado.ioloop</span>
+<span class="kn">from</span> <span class="nn">tornado.httpclient</span> <span class="kn">import</span> <span class="n">AsyncHTTPClient</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="n">SCALE</span> <span class="o">=</span> <span class="mi">20000</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="n">SCALE</span>
+<span class="n">AsyncHTTPClient</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s">&quot;tornado.curl_httpclient.CurlAsyncHTTPClient&quot;</span><span class="p">)</span>
+
+<span class="n">_</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">handle_request</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">counter</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;Error:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">error</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">counter</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">counter</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&#39;TIME&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">_</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">http_client</span> <span class="o">=</span> <span class="n">AsyncHTTPClient</span><span class="p">()</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="n">SCALE</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">scale</span><span class="p">):</span>
+    <span class="n">http_client</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s">&quot;http://hws.m.taobao.com/cache/wdetail/5.0/?id=16452516831&quot;</span><span class="p">,</span>
+<span class="n">handle_request</span><span class="p">)</span>
+
+<span class="n">tornado</span><span class="o">.</span><span class="n">ioloop</span><span class="o">.</span><span class="n">IOLoop</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+
+
+<p>机器是2015的4G macbook air, 网络环境是上海的长城宽带50M</p>
+            </div><!-- /.entry-content -->
+            <div class="comments">
+              <h3>Comments</h3>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                var disqus_identifier = "drafts/tornado-yi-bu-kuang-jia-chu-tan-yi.html";
+                (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://diaosi2008.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+            </div>
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+    <div class="centered">
+    <img src="http://www.gravatar.com/avatar/3460335d55dc8c8dbbf9dfe27cd0ede6?s=150&d=http%3A%2F%2Fwww.example.com%2Fdefault.jpg" class="avatar">
+    </div>
+<!--
+<h4>Pages</h4>
+
+ <ul>
+      <li><a href="/pages/2015-to-read-list.html">2015 To-read list</a></li>
+      <li><a href="/pages/about.html">About</a></li>
+      <li><a href="/pages/references.html">References</a></li>
+  </ul>
+-->
+<h4>Categories</h4>
 <ul>
-<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
-<li class="tag-4">
-	<a href="/tag/mp3.html">
-		<i class="icon-tag icon-large"></i>mp3
-	</a>
-</li>
-<li class="tag-4">
-	<a href="/tag/drcom.html">
-		<i class="icon-tag icon-large"></i>drcom
-	</a>
-</li>
-<li class="tag-1">
-	<a href="/tag/python.html">
-		<i class="icon-tag icon-large"></i>python
-	</a>
-</li>
-<li class="tag-4">
-	<a href="/tag/esp8266.html">
-		<i class="icon-tag icon-large"></i>esp8266
-	</a>
-</li>
-<li class="tag-4">
-	<a href="/tag/mutagen.html">
-		<i class="icon-tag icon-large"></i>mutagen
-	</a>
-</li>
+		<li><a href="/category/others.html">Others</a></li>
+		<li><a href="/category/python.html">Python</a></li>
 </ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul>
+    <li><a href="http://shit.blue">muzique</a></li>
+    <li><a href="http://getpelican.com">Pelican</a></li>
+  </ul>
+</nav>
+    
+<h4>Tags</h4>
+
+<ul class="tagcloud">
+        <li class="tag-4"><a href="/tag/mp3.html">mp3</a></li>
+        <li class="tag-4"><a href="/tag/drcom.html">drcom</a></li>
+        <li class="tag-1"><a href="/tag/python.html">python</a></li>
+        <li class="tag-4"><a href="/tag/esp8266.html">esp8266</a></li>
+        <li class="tag-4"><a href="/tag/mutagen.html">mutagen</a></li>
+</ul>
+</div> </div><!-- /.row -->
+
+
+</section>
 
        </div><!-- /.row -->
     </div><!-- /.container -->
