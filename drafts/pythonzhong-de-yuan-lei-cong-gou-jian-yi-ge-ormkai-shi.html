@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-        <title>とあるおバカの世界観測記録 - esp8266</title>
+        <title>Python中的元类，从构建一个ORM开始</title>
         <meta charset="utf-8" />
           
 <style type="text/css">
@@ -1757,53 +1757,78 @@ jQuery(document).ready(function($) {
               </ul>
             </div>
 
-<section id="content">
+<section id="content" class="body"  class="margin-top: 20px">
 
-
-   <div class="row" style="margin-top: 20px;">
-    
-
+   <div class="row">
         <div class="eleven columns">
-                 <ol id="post-list">
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/hei-ke-ji-esp8266rang-ni-bai-tuo-drcomke-hu-duan.html" rel="bookmark" title="Permalink to 黑科技：esp8266让你摆脱DrCOM客户端">黑科技：esp8266让你摆脱DrCOM客户端</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2014-12-25T21:08:00+08:00"> Thu, 25 Dec 2014 </abbr>
-                                    <address class="vcard author">By 
-                                    <a class="url fn" href="/author/obaka.html"> Obaka</a>
-                                    </address>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>嘛，首先放出放弃维护的代码吧<br />
-<a href="https://github.com/drcoms/drcom-dialer-esp8266">https://github.com/drcoms/drcom-dialer-esp8266</a></p>
-<p>之前折腾 <code>DrCOM</code> 客户端, 但是面对某些情况下路由器没有办法装下 <code>python</code> 的时候，该怎么办好呢？<br />
-这时候只需要小小的一颗金坷垃 ， 哦不，是一片小小的 <em>esp8266</em> 就可以完成 <em>DrCOM</em> 认证。<br />
-首先，工欲善其事必先利其器，下面的东西里随便选一个，这里我们选了最大的那一坨。<br />
-<img alt="开发板" src="/images/esp8266-drcom1.jpg" /></p>
-<p>那么首先令 <strong>GPIO14</strong> 为低电平，以开启AP模式来设置相关参数，实际成品中可以将 GPIO14 和 GND 中间以一个开关连接。</p>
-<p><img alt="开发板" src="/images/esp8266-drcom2.jpg" /></p>
-<p>点开那坨白色的开关以后，串口输出（大概就是调试信息啦</p>
-<p><img alt="开发板" src="/images/esp8266-drcom3.jpg" /></p>
-<p>这时候你会忽然发现周围多了一个叫 <strong>DrCOMDialer</strong> 的热点名，这是专门用来连接上去配置用的哟。</p>
-<p><img alt="开发板" src="/images/esp8266-drcom4.jpg" /></p>
-<p>默认没有密码，连接上去，然后在浏览器中访问 <code>http://192.168.4.1</code>，你会看到你所看到过最简陋的网页 ...</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="/hei-ke-ji-esp8266rang-ni-bai-tuo-drcomke-hu-duan.html" rel="bookmark" title="Permalink to 黑科技：esp8266让你摆脱DrCOM客户端">Read more <i class="icon-arrow-right"></i></a></div>
 
 
+            <header>
+              <h2 class="entry-title">
+                <a href="/drafts/pythonzhong-de-yuan-lei-cong-gou-jian-yi-ge-ormkai-shi.html" rel="bookmark"
+                   title="Permalink to Python中的元类，从构建一个ORM开始">Python中的元类，从构建一个ORM开始</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2015-05-05T00:00:00+08:00">
+                Tue, 05 May 2015
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/obaka.html"> Obaka</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>让我们先从一个简单的例子开始</p>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Meta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">print</span> <span class="n">args</span>
 
-                                <div class="row tag-row">
-                                        <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/esp8266.html">esp8266</a>
-                                            <a class="danger label" href="/tag/drcom.html">drcom</a>
-                                </div>
+<span class="k">class</span> <span class="nc">Model</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">Meta</span>
+</pre></div>
 
 
+<p><code>type</code>的作用我们先来看看帮助文档，这里是运行help(type)的结果的节选</p>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">type</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+ <span class="o">|</span>  <span class="nb">type</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">the</span> <span class="nb">object</span><span class="s">&#39;s type</span>
+ <span class="o">|</span>  <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="n">new</span> <span class="nb">type</span>
+<span class="o">...</span>
+ <span class="o">|</span>  <span class="n">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+ <span class="o">|</span>      <span class="n">x</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="n">initializes</span> <span class="n">x</span><span class="p">;</span> <span class="n">see</span> <span class="n">help</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="k">for</span> <span class="n">signature</span>
+</pre></div>
 
-                        </article></li>
-                </ol><!-- /#posts-list -->
+
+<p>可以看出<code>type</code>的作用应该是两类,</p>
+<ol>
+<li>type(object) -&gt; 返回对象的类型</li>
+<li>type(name, bases, dict) -&gt; 产生一个新类型</li>
+</ol>
+<p>那么第二个功能就是创建一个类（定义）了, 先来运行一下上面那段代码的看看</p>
+<div class="highlight"><pre><span class="o">(</span>&lt;class <span class="s1">&#39;test.Model&#39;</span>&gt;, <span class="s1">&#39;Model&#39;</span>, <span class="o">(</span>&lt;<span class="nb">type</span> <span class="s1">&#39;object&#39;</span>&gt;,<span class="o">)</span>, <span class="o">{</span><span class="s1">&#39;__module__&#39;</span>:
+<span class="s1">&#39;test&#39;</span>, <span class="s1">&#39;__metaclass__&#39;</span>: &lt;class <span class="s1">&#39;test.Meta&#39;</span>&gt;<span class="o">})</span>
+</pre></div>
+
+
+<p>对应<code>type</code>的帮助文件，可以知道<code>__init__</code>方法被传递了<code>cls, name, bases,
+namespace</code>
+这样的参数，考虑到类方法第一个参数是<code>self</code>，这里居然是<code>cls</code>，可以猜测这里的<code>cls</code>和<code>self</code>是等价的，即<code>type</code>类的实例化后的对象是 <strong>类</strong></p>
+            </div><!-- /.entry-content -->
+            <div class="comments">
+              <h3>Comments</h3>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                var disqus_identifier = "drafts/pythonzhong-de-yuan-lei-cong-gou-jian-yi-ge-ormkai-shi.html";
+                (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://diaosi2008.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+            </div>
+
 
         </div><!-- /.eleven.columns -->
-        
+
 <div class="three columns">
     <div class="centered">
     <img src="http://www.gravatar.com/avatar/3460335d55dc8c8dbbf9dfe27cd0ede6?s=150&d=http%3A%2F%2Fwww.example.com%2Fdefault.jpg" class="avatar">
@@ -1843,10 +1868,8 @@ jQuery(document).ready(function($) {
 </ul>
 </div> </div><!-- /.row -->
 
-<p class="paginator">
-    Page 1 / 1
-</p>
-</section><!-- /#content -->
+
+</section>
 
        </div><!-- /.row -->
     </div><!-- /.container -->
