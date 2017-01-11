@@ -1753,6 +1753,9 @@ jQuery(document).ready(function($) {
               <ul class="columns">
                 <li><a href="./">Home</a></li>
 
+                <li><a href="./pages/2017-to-read-list.html">2017 To-read list</a></li>
+                <li><a href="./pages/about.html">About</a></li>
+                <li><a href="./pages/links.html">Links</a></li>
 
               </ul>
             </div>
@@ -1778,35 +1781,35 @@ jQuery(document).ready(function($) {
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
-              <p>嘛，首先放出放弃维护的代码吧<br>
+              <p>嘛，首先放出放弃维护的代码吧<br />
 <a href="https://github.com/drcoms/drcom-dialer-esp8266">https://github.com/drcoms/drcom-dialer-esp8266</a></p>
-<p>之前折腾 <code>DrCOM</code> 客户端, 但是面对某些情况下路由器没有办法装下 <code>python</code> 的时候，该怎么办好呢？<br>
-这时候只需要小小的一颗金坷垃 ， 哦不，是一片小小的 <em>esp8266</em> 就可以完成 <em>DrCOM</em> 认证。<br>
-首先，工欲善其事必先利其器，下面的东西里随便选一个，这里我们选了最大的那一坨。<br>
-<img alt="开发板" src="/images/esp8266-drcom1.jpg"></p>
+<p>之前折腾 <code>DrCOM</code> 客户端, 但是面对某些情况下路由器没有办法装下 <code>python</code> 的时候，该怎么办好呢？<br />
+这时候只需要小小的一颗金坷垃 ， 哦不，是一片小小的 <em>esp8266</em> 就可以完成 <em>DrCOM</em> 认证。<br />
+首先，工欲善其事必先利其器，下面的东西里随便选一个，这里我们选了最大的那一坨。<br />
+<img alt="开发板" src="/images/esp8266-drcom1.jpg" /></p>
 <p>那么首先令 <strong>GPIO14</strong> 为低电平，以开启AP模式来设置相关参数，实际成品中可以将 GPIO14 和 GND 中间以一个开关连接。</p>
-<p><img alt="开发板" src="/images/esp8266-drcom2.jpg"></p>
+<p><img alt="开发板" src="/images/esp8266-drcom2.jpg" /></p>
 <p>点开那坨白色的开关以后，串口输出（大概就是调试信息啦</p>
-<p><img alt="开发板" src="/images/esp8266-drcom3.jpg"></p>
+<p><img alt="开发板" src="/images/esp8266-drcom3.jpg" /></p>
 <p>这时候你会忽然发现周围多了一个叫 <strong>DrCOMDialer</strong> 的热点名，这是专门用来连接上去配置用的哟。</p>
-<p><img alt="开发板" src="/images/esp8266-drcom4.jpg"></p>
+<p><img alt="开发板" src="/images/esp8266-drcom4.jpg" /></p>
 <p>默认没有密码，连接上去，然后在浏览器中访问 <code>http://192.168.4.1</code>，你会看到你所看到过最简陋的网页。</p>
-<p><img alt="开发板" src="/images/esp8266-drcom5.jpg"></p>
-<p>那一条条的灰翔是怕某学校某机构的某些人看到了，同学的ip，这样不好的说，就遮住了。<br>
+<p><img alt="开发板" src="/images/esp8266-drcom5.jpg" /></p>
+<p>那一条条的灰翔是怕某学校某机构的某些人看到了，同学的ip，这样不好的说，就遮住了。<br />
 这时候可以断开那条杜邦线了（其实如果做成按钮，就开机的时候点住3秒，就可以放开了）</p>
-<p><img alt="开发板" src="/images/esp8266-drcom6.jpg"></p>
-<p>浏览器中果断点下确定，小小的8266酱会自动配置好并重启一次，只需要配置一次，相关信息保存在flash里的，如果想修改，就重复上面一大坨我看着都烦的步骤…… 记住别让 GPIO14 是低电平（或者别按下按钮，虽然这里我们虚构了一个按钮）<br>
+<p><img alt="开发板" src="/images/esp8266-drcom6.jpg" /></p>
+<p>浏览器中果断点下确定，小小的8266酱会自动配置好并重启一次，只需要配置一次，相关信息保存在flash里的，如果想修改，就重复上面一大坨我看着都烦的步骤…… 记住别让 GPIO14 是低电平（或者别按下按钮，虽然这里我们虚构了一个按钮）<br />
 串口输出</p>
 <p>最后一行真像大白。  </p>
 <p>8266酱可以使用3.3v供电，使用7333可以支持3.3-5V电压输入（也就是三节干电池或者充电宝啊usb接口啊什么的都可以），成品中可以做的很小很小（我们又假设了一个成品）。
-<img alt="开发板" src="/images/esp8266-drcom7.jpg"></p>
-<p>代码在清理各种垃圾后会整体传到 Github 上，尽请期待。<br>
+<img alt="开发板" src="/images/esp8266-drcom7.jpg" /></p>
+<p>代码在清理各种垃圾后会整体传到 Github 上，尽请期待。<br />
 对了，这是采用8266酱的老爸乐鑫出的 <code>FreeRTOS SDK</code> 不知道为什么，这段时间乐鑫忽然活跃了，赞一个。</p>
 <h3>参考</h3>
-<p><a href="https://github.com/drcoms/jlu-drcom-client/tree/master/C-version">DrCOM JLU Client C Version by feix on Github</a><br>
+<p><a href="https://github.com/drcoms/jlu-drcom-client/tree/master/C-version">DrCOM JLU Client C Version by feix on Github</a><br />
 <a href="https://github.com/espressif/esp_iot_rtos_sdk">Espressif ESP_IOT_RTOS_SDK</a></p>
 <h3>附送小豆图一张</h3>
-<p><img alt="开发板" src="/images/esp8266-drcom8.jpg"></p>
+<p><img alt="开发板" src="/images/esp8266-drcom8.jpg" /></p>
             </div><!-- /.entry-content -->
             <div class="comments">
               <h3>Comments</h3>
@@ -1826,12 +1829,15 @@ jQuery(document).ready(function($) {
 
 <div class="three columns">
     <div class="centered">
-    <img src="http://www.gravatar.com/avatar/3460335d55dc8c8dbbf9dfe27cd0ede6?s=150&d=http%3A%2F%2Fwww.example.com%2Fdefault.jpg" class="avatar">
+    <img src="http://www.gravatar.com/avatar/3460335d55dc8c8dbbf9dfe27cd0ede6?d=http%3A%2F%2Fwww.example.com%2Fdefault.jpg&s=150" class="avatar">
     </div>
 <!--
 <h4>Pages</h4>
 
  <ul>
+      <li><a href="./pages/2017-to-read-list.html">2017 To-read list</a></li>
+      <li><a href="./pages/about.html">About</a></li>
+      <li><a href="./pages/links.html">Links</a></li>
   </ul>
 -->
 <h4>Categories</h4>
@@ -1852,11 +1858,11 @@ jQuery(document).ready(function($) {
 <h4>Tags</h4>
 
 <ul class="tagcloud">
+        <li class="tag-4"><a href="./tag/esp8266.html">esp8266</a></li>
+        <li class="tag-4"><a href="./tag/drcom.html">drcom</a></li>
+        <li class="tag-4"><a href="./tag/mutagen.html">mutagen</a></li>
         <li class="tag-1"><a href="./tag/python.html">python</a></li>
         <li class="tag-4"><a href="./tag/mp3.html">mp3</a></li>
-        <li class="tag-4"><a href="./tag/esp8266.html">esp8266</a></li>
-        <li class="tag-4"><a href="./tag/mutagen.html">mutagen</a></li>
-        <li class="tag-4"><a href="./tag/drcom.html">drcom</a></li>
 </ul>
 </div> </div><!-- /.row -->
 

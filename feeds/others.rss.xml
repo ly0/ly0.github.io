@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>とあるおバカの世界観測記録 - Others</title><link>/</link><description></description><lastBuildDate>Thu, 25 Dec 2014 21:08:00 +0800</lastBuildDate><item><title>黑科技：esp8266让你摆脱DrCOM客户端</title><link>/hei-ke-ji-esp8266rang-ni-bai-tuo-drcomke-hu-duan.html</link><description>&lt;p&gt;嘛，首先放出放弃维护的代码吧&lt;br&gt;
+<rss version="2.0"><channel><title>とあるおバカの世界観測記録</title><link>/</link><description></description><lastBuildDate>Thu, 25 Dec 2014 21:08:00 +0800</lastBuildDate><item><title>黑科技：esp8266让你摆脱DrCOM客户端</title><link>/hei-ke-ji-esp8266rang-ni-bai-tuo-drcomke-hu-duan.html</link><description>&lt;p&gt;嘛，首先放出放弃维护的代码吧&lt;br /&gt;
 &lt;a href="https://github.com/drcoms/drcom-dialer-esp8266"&gt;https://github.com/drcoms/drcom-dialer-esp8266&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;之前折腾 &lt;code&gt;DrCOM&lt;/code&gt; 客户端, 但是面对某些情况下路由器没有办法装下 &lt;code&gt;python&lt;/code&gt; 的时候，该怎么办好呢？&lt;br&gt;
-这时候只需要小小的一颗金坷垃 ， 哦不，是一片小小的 &lt;em&gt;esp8266&lt;/em&gt; 就可以完成 &lt;em&gt;DrCOM&lt;/em&gt; 认证。&lt;br&gt;
-首先，工欲善其事必先利其器，下面的东西里随便选一个，这里我们选了最大的那一坨。&lt;br&gt;
-&lt;img alt="开发板" src="/images/esp8266-drcom1.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;之前折腾 &lt;code&gt;DrCOM&lt;/code&gt; 客户端, 但是面对某些情况下路由器没有办法装下 &lt;code&gt;python&lt;/code&gt; 的时候，该怎么办好呢？&lt;br /&gt;
+这时候只需要小小的一颗金坷垃 ， 哦不，是一片小小的 &lt;em&gt;esp8266&lt;/em&gt; 就可以完成 &lt;em&gt;DrCOM&lt;/em&gt; 认证。&lt;br /&gt;
+首先，工欲善其事必先利其器，下面的东西里随便选一个，这里我们选了最大的那一坨。&lt;br /&gt;
+&lt;img alt="开发板" src="/images/esp8266-drcom1.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;那么首先令 &lt;strong&gt;GPIO14&lt;/strong&gt; 为低电平，以开启AP模式来设置相关参数，实际成品中可以将 GPIO14 和 GND 中间以一个开关连接。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="开发板" src="/images/esp8266-drcom2.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="开发板" src="/images/esp8266-drcom2.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;点开那坨白色的开关以后，串口输出（大概就是调试信息啦&lt;/p&gt;
-&lt;p&gt;&lt;img alt="开发板" src="/images/esp8266-drcom3.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="开发板" src="/images/esp8266-drcom3.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;这时候你会忽然发现周围多了一个叫 &lt;strong&gt;DrCOMDialer&lt;/strong&gt; 的热点名，这是专门用来连接上去配置用的哟。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="开发板" src="/images/esp8266-drcom4.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;默认没有密码，连接上去，然后在浏览器中访问 &lt;code&gt;http://192.168.4.1&lt;/code&gt;，你会看到你所看到过最简陋的网页 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Obaka</dc:creator><pubDate>Thu, 25 Dec 2014 21:08:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-12-25:/hei-ke-ji-esp8266rang-ni-bai-tuo-drcomke-hu-duan.html</guid><category>esp8266</category><category>drcom</category></item></channel></rss>
+&lt;p&gt;&lt;img alt="开发板" src="/images/esp8266-drcom4.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;默认没有密码，连接上去，然后在浏览器中访问 &lt;code&gt;http://192.168.4.1&lt;/code&gt;，你会看到你所看到过最简陋的网页。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="开发板" src="/images/esp8266-drcom5.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;那一条条的灰翔是怕某学校某机构的某些人看到了，同学的ip，这样不好的说，就遮住了。&lt;br /&gt;
+这时候可以断开那条杜邦线了（其实如果做成按钮，就开机的时候点住3秒，就可以放开了）&lt;/p&gt;
+&lt;p&gt;&lt;img alt="开发板" src="/images/esp8266-drcom6.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;浏览器中果断点下确定，小小的8266酱会自动配置好并重启一次，只需要配置一次，相关信息保存在flash里的，如果想修改，就重复上面一大坨我看着都烦的步骤…… 记住别让 GPIO14 是低电平（或者别按下按钮，虽然这里我们虚构了一个按钮）&lt;br /&gt;
+串口输出&lt;/p&gt;
+&lt;p&gt;最后一行真像大白。  &lt;/p&gt;
+&lt;p&gt;8266酱可以使用3.3v供电，使用7333可以支持3.3-5V电压输入（也就是三节干电池或者充电宝啊usb接口啊什么的都可以），成品中可以做的很小很小（我们又假设了一个成品）。
+&lt;img alt="开发板" src="/images/esp8266-drcom7.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;代码在清理各种垃圾后会整体传到 Github 上，尽请期待。&lt;br /&gt;
+对了，这是采用8266酱的老爸乐鑫出的 &lt;code&gt;FreeRTOS SDK&lt;/code&gt; 不知道为什么，这段时间乐鑫忽然活跃了，赞一个。&lt;/p&gt;
+&lt;h3&gt;参考&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/drcoms/jlu-drcom-client/tree/master/C-version"&gt;DrCOM JLU Client C Version by feix on Github&lt;/a&gt;&lt;br /&gt;
+&lt;a href="https://github.com/espressif/esp_iot_rtos_sdk"&gt;Espressif ESP_IOT_RTOS_SDK&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;附送小豆图一张&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="开发板" src="/images/esp8266-drcom8.jpg" /&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Obaka</dc:creator><pubDate>Thu, 25 Dec 2014 21:08:00 +0800</pubDate><guid isPermaLink="false">tag:,2014-12-25:hei-ke-ji-esp8266rang-ni-bai-tuo-drcomke-hu-duan.html</guid><category>esp8266</category><category>drcom</category></item></channel></rss>
