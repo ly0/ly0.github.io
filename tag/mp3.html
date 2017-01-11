@@ -4,6 +4,8 @@
 
         <title>とあるおバカの世界観測記録 - mp3</title>
         <meta charset="utf-8" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="とあるおバカの世界観測記録 Full Atom Feed" />
+        <link href="/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="とあるおバカの世界観測記録 RSS Feed" />
           
 <style type="text/css">
 .clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
@@ -1709,11 +1711,11 @@ jQuery(document).ready(function($) {
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
-        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
-        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+        <link rel="stylesheet" type="text/css" href="../theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="../theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="../theme/pygment.css" />
 
-        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+        <script src="../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
 
@@ -1741,18 +1743,15 @@ jQuery(document).ready(function($) {
 
             
           <header id="banner" class="body">
-                 <h1><a href="/">とあるおバカの世界観測記録 </a></h1>
+                 <h1><a href="../">とあるおバカの世界観測記録 </a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="navbar row">
               <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
              
               <ul class="columns">
-                <li><a href="/">Home</a></li>
+                <li><a href="../">Home</a></li>
 
-                <li><a href="/pages/2015-to-read-list.html">2015 To-read list</a></li>
-                <li><a href="/pages/about.html">About</a></li>
-                <li><a href="/pages/references.html">References</a></li>
 
               </ul>
             </div>
@@ -1766,22 +1765,22 @@ jQuery(document).ready(function($) {
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/mutagen-python-examples.html" rel="bookmark" title="Permalink to Mutagen-Python Examples">Mutagen-Python Examples</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../mutagen-python-examples.html" rel="bookmark" title="Permalink to Mutagen-Python Examples">Mutagen-Python Examples</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2014-12-26T03:48:00+08:00"> Fri, 26 Dec 2014 </abbr>
                                     <address class="vcard author">By 
-                                    <a class="url fn" href="/author/obaka.html"> Obaka</a>
+                                    <a class="url fn" href="../author/obaka.html"> Obaka</a>
                                     </address>
                                 </footer><!-- /.post-info -->
                                 <div class="entry-content"> <ul>
 <li>给 <em>MP3</em> 加封面图片</li>
 </ul>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">mutagen.mp3</span> <span class="kn">import</span> <span class="n">MP3</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mutagen.mp3</span> <span class="kn">import</span> <span class="n">MP3</span>
 <span class="kn">from</span> <span class="nn">mutagen.id3</span> <span class="kn">import</span> <span class="n">ID3</span><span class="p">,</span> <span class="n">APIC</span><span class="p">,</span> <span class="n">error</span>
 
-<span class="n">audio</span> <span class="o">=</span> <span class="n">MP3</span><span class="p">(</span><span class="s">&#39;example.mp3&#39;</span><span class="p">,</span> <span class="n">ID3</span><span class="o">=</span><span class="n">ID3</span><span class="p">)</span>
+<span class="n">audio</span> <span class="o">=</span> <span class="n">MP3</span><span class="p">(</span><span class="s1">&#39;example.mp3&#39;</span><span class="p">,</span> <span class="n">ID3</span><span class="o">=</span><span class="n">ID3</span><span class="p">)</span>
 
-<span class="c"># add ID3 tag if it doesn&#39;t exist</span>
+<span class="c1"># add ID3 tag if it doesn&#39;t exist</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">audio</span><span class="o">.</span><span class="n">add_tags</span><span class="p">()</span>
 <span class="k">except</span> <span class="n">error</span><span class="p">:</span>
@@ -1789,18 +1788,18 @@ jQuery(document).ready(function($) {
 
 <span class="n">audio</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
     <span class="n">APIC</span><span class="p">(</span>
-        <span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c"># 3 is for utf-8</span>
-        <span class="n">mime</span><span class="o">=</span><span class="s">&#39;image/png&#39;</span><span class="p">,</span> <span class="c"># image/jpeg ...</span></pre></div> </div><!-- /.entry-content -->
+        <span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># 3 is for utf-8</span>
+        <span class="n">mime</span><span class="o">=</span><span class="s1">&#39;image/png&#39;</span><span class="p">,</span> <span class="c1"># image/jpeg …</span></pre></div> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="/mutagen-python-examples.html" rel="bookmark" title="Permalink to Mutagen-Python Examples">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../mutagen-python-examples.html" rel="bookmark" title="Permalink to Mutagen-Python Examples">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/python.html">python</a>
-                                            <a class="danger label" href="/tag/mutagen.html">mutagen</a>
-                                            <a class="danger label" href="/tag/mp3.html">mp3</a>
+                                            <a class="danger label" href="../tag/python.html">python</a>
+                                            <a class="danger label" href="../tag/mutagen.html">mutagen</a>
+                                            <a class="danger label" href="../tag/mp3.html">mp3</a>
                                 </div>
 
 
@@ -1818,15 +1817,12 @@ jQuery(document).ready(function($) {
 <h4>Pages</h4>
 
  <ul>
-      <li><a href="/pages/2015-to-read-list.html">2015 To-read list</a></li>
-      <li><a href="/pages/about.html">About</a></li>
-      <li><a href="/pages/references.html">References</a></li>
   </ul>
 -->
 <h4>Categories</h4>
 <ul>
-		<li><a href="/category/others.html">Others</a></li>
-		<li><a href="/category/python.html">Python</a></li>
+		<li><a href="../category/others.html">Others</a></li>
+		<li><a href="../category/python.html">Python</a></li>
 </ul>
 
 
@@ -1841,11 +1837,11 @@ jQuery(document).ready(function($) {
 <h4>Tags</h4>
 
 <ul class="tagcloud">
-        <li class="tag-1"><a href="/tag/python.html">python</a></li>
-        <li class="tag-4"><a href="/tag/mutagen.html">mutagen</a></li>
-        <li class="tag-4"><a href="/tag/mp3.html">mp3</a></li>
-        <li class="tag-4"><a href="/tag/drcom.html">drcom</a></li>
-        <li class="tag-4"><a href="/tag/esp8266.html">esp8266</a></li>
+        <li class="tag-1"><a href="../tag/python.html">python</a></li>
+        <li class="tag-4"><a href="../tag/mp3.html">mp3</a></li>
+        <li class="tag-4"><a href="../tag/esp8266.html">esp8266</a></li>
+        <li class="tag-4"><a href="../tag/mutagen.html">mutagen</a></li>
+        <li class="tag-4"><a href="../tag/drcom.html">drcom</a></li>
 </ul>
 </div> </div><!-- /.row -->
 
@@ -1877,6 +1873,7 @@ jQuery(document).ready(function($) {
             <div class="row">
               <ul class="socbtns">
 
+                <li class="sns-icon"><div class="btn success"><a href="feeds/rss.xml" target="_blank">RSS</a></div></li>
                 <li class="sns-icon"><div class="btn primary"><a href="http://github.com/ly0" target="_blank">Github</a></div></li>
 
 
@@ -1901,8 +1898,8 @@ jQuery(document).ready(function($) {
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
-  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
-  <script src="/theme/js/libs/gumby.min.js"></script>
-  <script src="/theme/js/plugins.js"></script>
+  <script src="../theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="../theme/js/libs/gumby.min.js"></script>
+  <script src="../theme/js/plugins.js"></script>
 </body>
 </html>

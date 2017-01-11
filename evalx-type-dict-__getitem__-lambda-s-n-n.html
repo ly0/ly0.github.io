@@ -4,6 +4,9 @@
 
         <title>EVAL(X, TYPE(“”, (DICT,), {‘__GETITEM__': LAMBDA S, N: N})())</title>
         <meta charset="utf-8" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="とあるおバカの世界観測記録 Full Atom Feed" />
+        <link href="/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="とあるおバカの世界観測記録 RSS Feed" />
+        <link href="/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="とあるおバカの世界観測記録 Categories RSS Feed" />
           
 <style type="text/css">
 .clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
@@ -1709,11 +1712,11 @@ jQuery(document).ready(function($) {
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
-        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
-        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+        <link rel="stylesheet" type="text/css" href="./theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="./theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="./theme/pygment.css" />
 
-        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+        <script src="./theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
 
@@ -1741,18 +1744,15 @@ jQuery(document).ready(function($) {
 
             
           <header id="banner" class="body">
-                 <h1><a href="/">とあるおバカの世界観測記録 </a></h1>
+                 <h1><a href="./">とあるおバカの世界観測記録 </a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="navbar row">
               <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
              
               <ul class="columns">
-                <li><a href="/">Home</a></li>
+                <li><a href="./">Home</a></li>
 
-                <li><a href="/pages/2015-to-read-list.html">2015 To-read list</a></li>
-                <li><a href="/pages/about.html">About</a></li>
-                <li><a href="/pages/references.html">References</a></li>
 
               </ul>
             </div>
@@ -1765,7 +1765,7 @@ jQuery(document).ready(function($) {
 
             <header>
               <h2 class="entry-title">
-                <a href="/evalx-type-dict-__getitem__-lambda-s-n-n.html" rel="bookmark"
+                <a href="./evalx-type-dict-__getitem__-lambda-s-n-n.html" rel="bookmark"
                    title="Permalink to EVAL(X, TYPE(“”, (DICT,), {‘__GETITEM__': LAMBDA S, N: N})())">EVAL(X, TYPE(“”, (DICT,), {‘__GETITEM__': LAMBDA S, N: N})())</a></h2>
            
             </header>
@@ -1774,17 +1774,17 @@ jQuery(document).ready(function($) {
                 Fri, 13 Mar 2015
               </abbr>
               <address class="vcard author">By 
-                <a class="url fn" href="/author/obaka.html"> Obaka</a>
+                <a class="url fn" href="./author/obaka.html"> Obaka</a>
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
-              <div class="highlight"><pre><span class="nb">eval</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="s">&quot;_Dummy&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,),</span> <span class="p">{</span><span class="s">&#39;__getitem__&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">name</span><span class="p">}))</span>
+              <div class="highlight"><pre><span></span><span class="nb">eval</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="s2">&quot;_Dummy&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,),</span> <span class="p">{</span><span class="s1">&#39;__getitem__&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">name</span><span class="p">}))</span>
 </pre></div>
 
 
 <p>这段代码最重要的一个应用是可以格式化非标准的JSON数据，比如</p>
-<div class="highlight"><pre><span class="n">X</span> <span class="o">=</span> <span class="p">{</span> <span class="n">key</span><span class="p">:</span> <span class="s">&quot;value&quot;</span> <span class="p">}</span>
-<span class="nb">eval</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,),</span> <span class="p">{</span><span class="s">&#39;__getitem__&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="n">n</span><span class="p">})())</span>
+<div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">{</span> <span class="n">key</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span> <span class="p">}</span>
+<span class="nb">eval</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,),</span> <span class="p">{</span><span class="s1">&#39;__getitem__&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="n">n</span><span class="p">})())</span>
 </pre></div>
 
 
@@ -1792,12 +1792,12 @@ jQuery(document).ready(function($) {
 <p>那么这一句神奇的东西该怎么解释呢？
 首先type在这里充当的不是返回类型的作用，这里作为一个class constructor的存在，第一个参数是类名，第二个参数为类的基类，第三个参数为一个字典，表示这个类的成员和方法。
 那么，<code>eval(X, type("", (dict,), {'<strong>getitem</strong>': lambda s, n: n})())</code>就是创建了一个临时的_Dummy类，上面的语句规约为</p>
-<div class="highlight"><pre><span class="nb">eval</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">_Dummy</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="nb">eval</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">_Dummy</span><span class="p">)</span>
 </pre></div>
 
 
 <p>那么eval的第二个的参数什么意思呢？</p>
-<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">eval</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">eval</span><span class="p">)</span>
 <span class="nb">eval</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
     <span class="nb">eval</span><span class="p">(</span><span class="n">source</span><span class="p">[,</span> <span class="nb">globals</span><span class="p">[,</span> <span class="nb">locals</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">value</span>
 
@@ -1836,15 +1836,12 @@ jQuery(document).ready(function($) {
 <h4>Pages</h4>
 
  <ul>
-      <li><a href="/pages/2015-to-read-list.html">2015 To-read list</a></li>
-      <li><a href="/pages/about.html">About</a></li>
-      <li><a href="/pages/references.html">References</a></li>
   </ul>
 -->
 <h4>Categories</h4>
 <ul>
-		<li><a href="/category/others.html">Others</a></li>
-		<li><a href="/category/python.html">Python</a></li>
+		<li><a href="./category/others.html">Others</a></li>
+		<li><a href="./category/python.html">Python</a></li>
 </ul>
 
 
@@ -1859,11 +1856,11 @@ jQuery(document).ready(function($) {
 <h4>Tags</h4>
 
 <ul class="tagcloud">
-        <li class="tag-1"><a href="/tag/python.html">python</a></li>
-        <li class="tag-4"><a href="/tag/mutagen.html">mutagen</a></li>
-        <li class="tag-4"><a href="/tag/mp3.html">mp3</a></li>
-        <li class="tag-4"><a href="/tag/drcom.html">drcom</a></li>
-        <li class="tag-4"><a href="/tag/esp8266.html">esp8266</a></li>
+        <li class="tag-1"><a href="./tag/python.html">python</a></li>
+        <li class="tag-4"><a href="./tag/mp3.html">mp3</a></li>
+        <li class="tag-4"><a href="./tag/esp8266.html">esp8266</a></li>
+        <li class="tag-4"><a href="./tag/mutagen.html">mutagen</a></li>
+        <li class="tag-4"><a href="./tag/drcom.html">drcom</a></li>
 </ul>
 </div> </div><!-- /.row -->
 
@@ -1893,6 +1890,7 @@ jQuery(document).ready(function($) {
             <div class="row">
               <ul class="socbtns">
 
+                <li class="sns-icon"><div class="btn success"><a href="feeds/rss.xml" target="_blank">RSS</a></div></li>
                 <li class="sns-icon"><div class="btn primary"><a href="http://github.com/ly0" target="_blank">Github</a></div></li>
 
 
@@ -1917,8 +1915,8 @@ jQuery(document).ready(function($) {
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
-  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
-  <script src="/theme/js/libs/gumby.min.js"></script>
-  <script src="/theme/js/plugins.js"></script>
+  <script src="./theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="./theme/js/libs/gumby.min.js"></script>
+  <script src="./theme/js/plugins.js"></script>
 </body>
 </html>

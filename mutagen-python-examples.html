@@ -4,6 +4,9 @@
 
         <title>Mutagen-Python Examples</title>
         <meta charset="utf-8" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="とあるおバカの世界観測記録 Full Atom Feed" />
+        <link href="/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="とあるおバカの世界観測記録 RSS Feed" />
+        <link href="/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="とあるおバカの世界観測記録 Categories RSS Feed" />
           
 <style type="text/css">
 .clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
@@ -1709,11 +1712,11 @@ jQuery(document).ready(function($) {
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
-        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
-        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+        <link rel="stylesheet" type="text/css" href="./theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="./theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="./theme/pygment.css" />
 
-        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+        <script src="./theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
 
@@ -1741,18 +1744,15 @@ jQuery(document).ready(function($) {
 
             
           <header id="banner" class="body">
-                 <h1><a href="/">とあるおバカの世界観測記録 </a></h1>
+                 <h1><a href="./">とあるおバカの世界観測記録 </a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="navbar row">
               <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
              
               <ul class="columns">
-                <li><a href="/">Home</a></li>
+                <li><a href="./">Home</a></li>
 
-                <li><a href="/pages/2015-to-read-list.html">2015 To-read list</a></li>
-                <li><a href="/pages/about.html">About</a></li>
-                <li><a href="/pages/references.html">References</a></li>
 
               </ul>
             </div>
@@ -1765,7 +1765,7 @@ jQuery(document).ready(function($) {
 
             <header>
               <h2 class="entry-title">
-                <a href="/mutagen-python-examples.html" rel="bookmark"
+                <a href="./mutagen-python-examples.html" rel="bookmark"
                    title="Permalink to Mutagen-Python Examples">Mutagen-Python Examples</a></h2>
            
             </header>
@@ -1774,19 +1774,19 @@ jQuery(document).ready(function($) {
                 Fri, 26 Dec 2014
               </abbr>
               <address class="vcard author">By 
-                <a class="url fn" href="/author/obaka.html"> Obaka</a>
+                <a class="url fn" href="./author/obaka.html"> Obaka</a>
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
               <ul>
 <li>给 <em>MP3</em> 加封面图片</li>
 </ul>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">mutagen.mp3</span> <span class="kn">import</span> <span class="n">MP3</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mutagen.mp3</span> <span class="kn">import</span> <span class="n">MP3</span>
 <span class="kn">from</span> <span class="nn">mutagen.id3</span> <span class="kn">import</span> <span class="n">ID3</span><span class="p">,</span> <span class="n">APIC</span><span class="p">,</span> <span class="n">error</span>
 
-<span class="n">audio</span> <span class="o">=</span> <span class="n">MP3</span><span class="p">(</span><span class="s">&#39;example.mp3&#39;</span><span class="p">,</span> <span class="n">ID3</span><span class="o">=</span><span class="n">ID3</span><span class="p">)</span>
+<span class="n">audio</span> <span class="o">=</span> <span class="n">MP3</span><span class="p">(</span><span class="s1">&#39;example.mp3&#39;</span><span class="p">,</span> <span class="n">ID3</span><span class="o">=</span><span class="n">ID3</span><span class="p">)</span>
 
-<span class="c"># add ID3 tag if it doesn&#39;t exist</span>
+<span class="c1"># add ID3 tag if it doesn&#39;t exist</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">audio</span><span class="o">.</span><span class="n">add_tags</span><span class="p">()</span>
 <span class="k">except</span> <span class="n">error</span><span class="p">:</span>
@@ -1794,11 +1794,11 @@ jQuery(document).ready(function($) {
 
 <span class="n">audio</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
     <span class="n">APIC</span><span class="p">(</span>
-        <span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c"># 3 is for utf-8</span>
-        <span class="n">mime</span><span class="o">=</span><span class="s">&#39;image/png&#39;</span><span class="p">,</span> <span class="c"># image/jpeg or image/png</span>
-        <span class="nb">type</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c"># 3 is for the cover image</span>
-        <span class="n">desc</span><span class="o">=</span><span class="s">u&#39;Cover&#39;</span><span class="p">,</span>
-        <span class="n">data</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;example.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># 3 is for utf-8</span>
+        <span class="n">mime</span><span class="o">=</span><span class="s1">&#39;image/png&#39;</span><span class="p">,</span> <span class="c1"># image/jpeg or image/png</span>
+        <span class="nb">type</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># 3 is for the cover image</span>
+        <span class="n">desc</span><span class="o">=</span><span class="s1">u&#39;Cover&#39;</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">audio</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
@@ -1808,28 +1808,28 @@ jQuery(document).ready(function($) {
 <ul>
 <li>给音频加上ID3部分</li>
 </ul>
-<div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
-<span class="c"># -*- coding: utf-8 -*-</span>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
 
-<span class="c"># Imports</span>
+<span class="c1"># Imports</span>
 <span class="kn">from</span> <span class="nn">mutagen.id3</span> <span class="kn">import</span> <span class="n">ID3</span><span class="p">,</span> <span class="n">TRCK</span><span class="p">,</span> <span class="n">TIT2</span><span class="p">,</span> <span class="n">TPE1</span><span class="p">,</span> <span class="n">TALB</span><span class="p">,</span> <span class="n">TDRC</span><span class="p">,</span> <span class="n">TCON</span><span class="p">,</span> <span class="n">COMM</span>
 
-<span class="c"># Set file</span>
-<span class="n">audio</span> <span class="o">=</span> <span class="n">ID3</span><span class="p">(</span><span class="s">&quot;example.mp3&quot;</span><span class="p">)</span>
+<span class="c1"># Set file</span>
+<span class="n">audio</span> <span class="o">=</span> <span class="n">ID3</span><span class="p">(</span><span class="s2">&quot;example.mp3&quot;</span><span class="p">)</span>
 
-<span class="c"># Add tags</span>
-<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TRCK</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">u&quot;1&quot;</span><span class="p">))</span>
-<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TIT2</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">u&quot;Title&quot;</span><span class="p">))</span>
-<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TPE1</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">u&quot;Artist&quot;</span><span class="p">))</span>
-<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TALB</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">u&quot;Album&quot;</span><span class="p">))</span>
-<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TDRC</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">u&quot;2011&quot;</span><span class="p">))</span>
-<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TCON</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">u&quot;Genre&quot;</span><span class="p">))</span>
-<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">COMM</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s">&quot;eng&quot;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">&quot;Comment&quot;</span><span class="p">))</span>
+<span class="c1"># Add tags</span>
+<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TRCK</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">u&quot;1&quot;</span><span class="p">))</span>
+<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TIT2</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">u&quot;Title&quot;</span><span class="p">))</span>
+<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TPE1</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">u&quot;Artist&quot;</span><span class="p">))</span>
+<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TALB</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">u&quot;Album&quot;</span><span class="p">))</span>
+<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TDRC</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">u&quot;2011&quot;</span><span class="p">))</span>
+<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TCON</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">u&quot;Genre&quot;</span><span class="p">))</span>
+<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">COMM</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Comment&quot;</span><span class="p">))</span>
 
-<span class="c"># Save tags</span>
+<span class="c1"># Save tags</span>
 <span class="n">audio</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
 
-<span class="c"># Print tags</span>
+<span class="c1"># Print tags</span>
 <span class="k">print</span> <span class="n">audio</span><span class="o">.</span><span class="n">pprint</span><span class="p">()</span>
 </pre></div>
 
@@ -1838,8 +1838,8 @@ jQuery(document).ready(function($) {
 <ul>
 <li>另一个给音频加上封面图片 (需要保证)</li>
 </ul>
-<div class="highlight"><pre><span class="n">audio</span> <span class="o">=</span> <span class="n">ID3</span><span class="p">(</span><span class="s">u&#39;P:/How Low_2.mp3&#39;</span><span class="p">)</span>
-<span class="n">pic</span> <span class="o">=</span> <span class="n">APIC</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s">u&#39;image/jpg&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">u&#39;Front cover&#39;</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">u&#39;cover.jpg&#39;</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><span class="n">audio</span> <span class="o">=</span> <span class="n">ID3</span><span class="p">(</span><span class="s1">u&#39;P:/How Low_2.mp3&#39;</span><span class="p">)</span>
+<span class="n">pic</span> <span class="o">=</span> <span class="n">APIC</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">u&#39;image/jpg&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">u&#39;Front cover&#39;</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">u&#39;cover.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 <span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">pic</span><span class="p">)</span>
 <span class="n">audio</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
 </pre></div>
@@ -1847,7 +1847,7 @@ jQuery(document).ready(function($) {
 
 <p><strong>注意</strong> 使用上面这两段代码音频文件必须要有 ID3 标签部分(<em>add_tags</em> 过或者原来有)</p>
 <h1>API</h1>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">mutagen.</span><span class="p">[</span><span class="n">format</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mutagen.</span><span class="p">[</span><span class="n">format</span><span class="p">]</span>
 <span class="n">metadata</span> <span class="o">=</span> <span class="n">mutagen</span><span class="o">.</span><span class="p">[</span><span class="n">format</span><span class="p">]</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </pre></div>
 
@@ -1858,7 +1858,7 @@ jQuery(document).ready(function($) {
 <p><code>class mutagen.FileType(filename)</code></p>
 <h4>Frame</h4>
 <h5>Attached picture 附加图片</h5>
-<div class="highlight"><pre>4.14.   Attached picture
+<div class="highlight"><pre><span></span>4.14.   Attached picture
 
    This frame contains a picture directly related to the audio file.
    Image format is the MIME type and subtype [MIME] for the image. In
@@ -1932,15 +1932,12 @@ jQuery(document).ready(function($) {
 <h4>Pages</h4>
 
  <ul>
-      <li><a href="/pages/2015-to-read-list.html">2015 To-read list</a></li>
-      <li><a href="/pages/about.html">About</a></li>
-      <li><a href="/pages/references.html">References</a></li>
   </ul>
 -->
 <h4>Categories</h4>
 <ul>
-		<li><a href="/category/others.html">Others</a></li>
-		<li><a href="/category/python.html">Python</a></li>
+		<li><a href="./category/others.html">Others</a></li>
+		<li><a href="./category/python.html">Python</a></li>
 </ul>
 
 
@@ -1955,11 +1952,11 @@ jQuery(document).ready(function($) {
 <h4>Tags</h4>
 
 <ul class="tagcloud">
-        <li class="tag-1"><a href="/tag/python.html">python</a></li>
-        <li class="tag-4"><a href="/tag/mutagen.html">mutagen</a></li>
-        <li class="tag-4"><a href="/tag/mp3.html">mp3</a></li>
-        <li class="tag-4"><a href="/tag/drcom.html">drcom</a></li>
-        <li class="tag-4"><a href="/tag/esp8266.html">esp8266</a></li>
+        <li class="tag-1"><a href="./tag/python.html">python</a></li>
+        <li class="tag-4"><a href="./tag/mp3.html">mp3</a></li>
+        <li class="tag-4"><a href="./tag/esp8266.html">esp8266</a></li>
+        <li class="tag-4"><a href="./tag/mutagen.html">mutagen</a></li>
+        <li class="tag-4"><a href="./tag/drcom.html">drcom</a></li>
 </ul>
 </div> </div><!-- /.row -->
 
@@ -1989,6 +1986,7 @@ jQuery(document).ready(function($) {
             <div class="row">
               <ul class="socbtns">
 
+                <li class="sns-icon"><div class="btn success"><a href="feeds/rss.xml" target="_blank">RSS</a></div></li>
                 <li class="sns-icon"><div class="btn primary"><a href="http://github.com/ly0" target="_blank">Github</a></div></li>
 
 
@@ -2013,8 +2011,8 @@ jQuery(document).ready(function($) {
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
-  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
-  <script src="/theme/js/libs/gumby.min.js"></script>
-  <script src="/theme/js/plugins.js"></script>
+  <script src="./theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="./theme/js/libs/gumby.min.js"></script>
+  <script src="./theme/js/plugins.js"></script>
 </body>
 </html>
