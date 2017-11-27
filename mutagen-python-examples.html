@@ -1753,9 +1753,6 @@ jQuery(document).ready(function($) {
               <ul class="columns">
                 <li><a href="./">Home</a></li>
 
-                <li><a href="./pages/2017-to-read-list.html">2017 To-read list</a></li>
-                <li><a href="./pages/about.html">About</a></li>
-                <li><a href="./pages/links.html">Links</a></li>
 
               </ul>
             </div>
@@ -1800,7 +1797,7 @@ jQuery(document).ready(function($) {
         <span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># 3 is for utf-8</span>
         <span class="n">mime</span><span class="o">=</span><span class="s1">&#39;image/png&#39;</span><span class="p">,</span> <span class="c1"># image/jpeg or image/png</span>
         <span class="nb">type</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># 3 is for the cover image</span>
-        <span class="n">desc</span><span class="o">=</span><span class="s1">u&#39;Cover&#39;</span><span class="p">,</span>
+        <span class="n">desc</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;Cover&#39;</span><span class="p">,</span>
         <span class="n">data</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="p">)</span>
 <span class="p">)</span>
@@ -1821,12 +1818,12 @@ jQuery(document).ready(function($) {
 <span class="n">audio</span> <span class="o">=</span> <span class="n">ID3</span><span class="p">(</span><span class="s2">&quot;example.mp3&quot;</span><span class="p">)</span>
 
 <span class="c1"># Add tags</span>
-<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TRCK</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">u&quot;1&quot;</span><span class="p">))</span>
-<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TIT2</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">u&quot;Title&quot;</span><span class="p">))</span>
-<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TPE1</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">u&quot;Artist&quot;</span><span class="p">))</span>
-<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TALB</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">u&quot;Album&quot;</span><span class="p">))</span>
-<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TDRC</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">u&quot;2011&quot;</span><span class="p">))</span>
-<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TCON</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">u&quot;Genre&quot;</span><span class="p">))</span>
+<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TRCK</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sa">u</span><span class="s2">&quot;1&quot;</span><span class="p">))</span>
+<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TIT2</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sa">u</span><span class="s2">&quot;Title&quot;</span><span class="p">))</span>
+<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TPE1</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sa">u</span><span class="s2">&quot;Artist&quot;</span><span class="p">))</span>
+<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TALB</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sa">u</span><span class="s2">&quot;Album&quot;</span><span class="p">))</span>
+<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TDRC</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sa">u</span><span class="s2">&quot;2011&quot;</span><span class="p">))</span>
+<span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TCON</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sa">u</span><span class="s2">&quot;Genre&quot;</span><span class="p">))</span>
 <span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">COMM</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Comment&quot;</span><span class="p">))</span>
 
 <span class="c1"># Save tags</span>
@@ -1841,8 +1838,8 @@ jQuery(document).ready(function($) {
 <ul>
 <li>另一个给音频加上封面图片 (需要保证)</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="n">audio</span> <span class="o">=</span> <span class="n">ID3</span><span class="p">(</span><span class="s1">u&#39;P:/How Low_2.mp3&#39;</span><span class="p">)</span>
-<span class="n">pic</span> <span class="o">=</span> <span class="n">APIC</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">u&#39;image/jpg&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">u&#39;Front cover&#39;</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">u&#39;cover.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><span class="n">audio</span> <span class="o">=</span> <span class="n">ID3</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;P:/How Low_2.mp3&#39;</span><span class="p">)</span>
+<span class="n">pic</span> <span class="o">=</span> <span class="n">APIC</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;image/jpg&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Front cover&#39;</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;cover.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 <span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">pic</span><span class="p">)</span>
 <span class="n">audio</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
 </pre></div>
@@ -1935,9 +1932,6 @@ jQuery(document).ready(function($) {
 <h4>Pages</h4>
 
  <ul>
-      <li><a href="./pages/2017-to-read-list.html">2017 To-read list</a></li>
-      <li><a href="./pages/about.html">About</a></li>
-      <li><a href="./pages/links.html">Links</a></li>
   </ul>
 -->
 <h4>Categories</h4>
@@ -1959,10 +1953,10 @@ jQuery(document).ready(function($) {
 
 <ul class="tagcloud">
         <li class="tag-4"><a href="./tag/esp8266.html">esp8266</a></li>
-        <li class="tag-4"><a href="./tag/drcom.html">drcom</a></li>
         <li class="tag-4"><a href="./tag/mutagen.html">mutagen</a></li>
         <li class="tag-1"><a href="./tag/python.html">python</a></li>
         <li class="tag-4"><a href="./tag/mp3.html">mp3</a></li>
+        <li class="tag-4"><a href="./tag/drcom.html">drcom</a></li>
 </ul>
 </div> </div><!-- /.row -->
 
@@ -1996,7 +1990,6 @@ jQuery(document).ready(function($) {
                 <li class="sns-icon"><div class="btn primary"><a href="http://github.com/ly0" target="_blank">Github</a></div></li>
 
 
-                <li class="sns-icon"><div class="btn facebook"><a href="https://www.facebook.com/yangjie.li.50" target="_blank">Facebook</a></div></li>
 
                 <li class="sns-icon"><div class="btn danger"><a href="https://plus.google.com/+YangJieLi/" target="_blank">Google+</a></div></li>
 
